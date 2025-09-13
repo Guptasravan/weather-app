@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advanced Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <h1>Weather Now</h1>
+      <p class="subtitle">Real-time weather with auto location & AQI</p>
+    </header>
+
+    <section class="controls">
+      <div class="left">
+        <input id="locationInput" type="text" placeholder="Enter city (e.g., Delhi, London)" />
+        <button id="searchBtn">Search</button>
+        <button id="detectBtn" title="Use device location">Use my location</button>
+      </div>
+
+      <div class="right">
+        <label class="toggle">
+          <input id="unitToggle" type="checkbox" />
+          <span class="slider"></span>
+          <small id="unitLabel">°C</small>
+        </label>
+      </div>
+    </section>
+
+    <main>
+      <div id="status" class="status"></div>
+
+      <div id="card" class="weather-card hidden">
+        <div class="card-header">
+          <div>
+            <h2 id="place">—</h2>
+            <p id="localtime" class="muted"></p>
+          </div>
+          <div id="iconWrap" class="icon-wrap">
+            <img id="conditionIcon" src="" alt="icon" />
+            <p id="conditionText">—</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="temp-block">
+            <div class="temp">
+              <span id="tempValue">--</span>
+              <span id="tempUnit">°C</span>
+            </div>
+            <div class="feels">Feels like <span id="feelsLike">--</span>°</div>
+          </div>
+
+          <div class="details">
+            <div>Humidity: <strong id="humidity">--</strong>%</div>
+            <div>Wind: <strong id="wind">--</strong> kph</div>
+            <div>Pressure: <strong id="pressure">--</strong> mb</div>
+            <div>Visibility: <strong id="vis">--</strong> km</div>
+          </div>
+
+          <hr/>
+
+          <div class="aqi-block">
+            <h3>AQI & Air</h3>
+            <div class="aqi-details">
+              <div>US EPA Index: <strong id="aqi_us">--</strong></div>
+              <div>PM2.5: <strong id="pm2_5">--</strong> µg/m³</div>
+              <div>PM10: <strong id="pm10">--</strong> µg/m³</div>
+            </div>
+            <p id="aqi_desc" class="muted small"></p>
+          </div>
+        </div>
+
+        <footer class="card-footer">
+          <small class="muted">Data from WeatherAPI.com</small>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
